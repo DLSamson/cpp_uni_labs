@@ -179,11 +179,48 @@ void zad7() {
   return;
 }
 
+//Я хз как это сделать без строк. Дофига математики
+bool isDigitsTheSame(int number) {
+  int digs = 0;
+  while(number > 0) {
+    cout << digs << endl;
+    cout << number << endl << endl;
+    if(digs & (1 <= (number % 10))){
+      return false;
+    }
+    digs |= (1 << (number % 10));
+    number /= 10;
+  }
+  return true;
+}
+void zad8() {
+  int number;
+  cout << "Enter natural number: ";
+  cin >> number;
+  if(number < 1 && number != 0) {
+    cout << "This is not a natural number" << endl;
+    return;
+  }
+  string message = "";
+  if(isDigitsTheSame(number)) {
+    message = "All digits are unique!";
+  } else {
+    message = "NOT All digits are unique!";
+  }
+  cout << message << endl;
+  return;
+}
+
+// bool
+// void zad12() {
+//
+// }
+
 int main() {
     // zad1(); //Готово
     // zad3(); //Готово
     // zad6(); //Готово
-    zad7();
+    // zad7(); //Готово
     // zad8();
     // zad12();
 }

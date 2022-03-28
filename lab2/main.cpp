@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stdio.h>
 #include<cmath>
 using namespace std;
 
@@ -103,11 +104,12 @@ bool isPolindrome(int number) {
 void zad3() {
   int number;
   cout << "Enter natural number: ";
-  cin >> number;
-  if(number < 0) {
+  scanf("%i", &number);
+  if(number < 0 || typeid(number).name() != "int") {
     cout << "This is not a natural number!" << endl;
     return;
   }
+
   string message = "";
   if(isPolindrome(number)) {
     message = "This is polindrome!";
@@ -120,7 +122,7 @@ void zad3() {
 
 int main() {
     // zad1(); //Готово
-    // zad3(); //Готово
+    zad3(); //Готово
     // zad6();
     // zad7();
     // zad8();

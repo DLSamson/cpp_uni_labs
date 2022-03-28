@@ -120,6 +120,43 @@ void zad3() {
   return;
 }
 
+bool hasTwoMultiplyers(int first, int second) {
+  int max_num = max(first, second);
+
+  for (int i = 2; i < max_num; i++) {
+    for (int j = 2; j < max_num; j++) {
+      if(first % i == 0 && second % i == 0) {
+        if((first/i) % j == 0 && (second/i) % j == 0) {
+          // cout << i << endl << j << endl;
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
+}
+void zad5() {
+  int first, second;
+  cout << "Enter natural number:  ";
+  cin >> first;
+  cout << "Enter natural number: ";
+  cin >> second;
+  if(first < 1 || second < 1) {
+    cout << "You entered wrong number" << endl;
+    return;
+  }
+
+  string message = "";
+  if(hasTwoMultiplyers(first, second)) {
+    message = "This has two multiplyers number!";
+  } else {
+    message = "This has not two multiplyers number!";
+  }
+  cout << message << endl;
+  return;
+}
+
 bool isMersenNumber(int number) {
   //Mersen number: n = 2^n - 1
   int mersenNumber = 0;
@@ -247,8 +284,9 @@ void zad12() {
 int main() {
     // zad1(); //Готово
     // zad3(); //Готово
+    // zad5(); //Готово
     // zad6(); //Готово
     // zad7(); //Готово
     // zad8();
-    zad12();
+    // zad12(); //Готово
 }

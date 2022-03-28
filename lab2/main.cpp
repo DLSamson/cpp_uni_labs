@@ -165,7 +165,7 @@ void zad7() {
   int number;
   cout << "Enter natural number: ";
   cin >> number;
-  if(number < 0) {
+  if(number < 1) {
     cout << "This is not a natural number" << endl;
     return;
   }

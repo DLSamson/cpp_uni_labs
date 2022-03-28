@@ -211,10 +211,38 @@ void zad8() {
   return;
 }
 
-// bool
-// void zad12() {
-//
-// }
+bool canBeCutDown(int first, int second) {
+  int delitel;
+  for(int i = min(first, second); i > 1; i--) {
+    // cout << i << endl;
+    // cout << first % i << endl;
+    // cout << second % i << endl << endl;
+    if(first % i == 0 && second % i == 0) {
+      return true;
+    }
+  }
+  return false;
+}
+void zad12() {
+  int first, second;
+  cout << "Enter natural number:  ";
+  cin >> first;
+  cout << "Enter natural number: ";
+  cin >> second;
+  if(first < 1 || second < 1) {
+    cout << "You entered wrong number" << endl;
+    return;
+  }
+
+  string message = "";
+  if(canBeCutDown(first, second)) {
+    message = "This can be cut down!";
+  } else {
+    message = "This can not be cut down!";
+  }
+  cout << message << endl;
+  return;
+}
 
 int main() {
     // zad1(); //Готово
@@ -222,5 +250,5 @@ int main() {
     // zad6(); //Готово
     // zad7(); //Готово
     // zad8();
-    // zad12();
+    zad12();
 }

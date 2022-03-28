@@ -104,8 +104,8 @@ bool isPolindrome(int number) {
 void zad3() {
   int number;
   cout << "Enter natural number: ";
-  scanf("%i", &number);
-  if(number < 0 || typeid(number).name() != "int") {
+  cin >> number;
+  if(number < 1) {
     cout << "This is not a natural number!" << endl;
     return;
   }
@@ -120,9 +120,39 @@ void zad3() {
   return;
 }
 
+bool isMersenNumber(int number) {
+  //Mersen number: n = 2^n - 1
+  int mersenNumber = 0;
+  for (int i = 0; mersenNumber < number; i++) {
+    mersenNumber = pow(2, i) - 1;
+     if(mersenNumber == number) {
+       return true;
+     }
+  }
+  return false;
+}
+void zad6() {
+  int number ;
+  cout << "Enter natural number: ";
+  cin >> number;
+  if(number < 1) {
+    cout << "This is not a natural number" << endl;
+    return;
+  }
+
+  string message = "";
+  if(isMersenNumber(number)) {
+    message = "This is mersen number!";
+  } else {
+    message = "This is not mersen number!";
+  }
+  cout << message << endl;
+  return;
+}
+
 int main() {
     // zad1(); //Готово
-    zad3(); //Готово
+    // zad3(); //Готово
     // zad6();
     // zad7();
     // zad8();

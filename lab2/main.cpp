@@ -150,11 +150,40 @@ void zad6() {
   return;
 }
 
+bool isProductOfSquaresNumber(int number) {
+  bool result = false;
+  for (int i = 0; i < sqrt(number); i++) {
+    for (int j = 0; j < sqrt(number); j++) {
+      if(i*i + j*j == number) {
+        result = true;
+      }
+    }
+  }
+  return result;
+}
+void zad7() {
+  int number;
+  cout << "Enter natural number: ";
+  cin >> number;
+  if(number < 0) {
+    cout << "This is not a natural number" << endl;
+    return;
+  }
+  string message = "";
+  if(isProductOfSquaresNumber(number)) {
+    message = "This is can be product of two squares!";
+  } else {
+    message = "This is can not be product of two squares!!";
+  }
+  cout << message << endl;
+  return;
+}
+
 int main() {
     // zad1(); //Готово
     // zad3(); //Готово
     // zad6(); //Готово
-    // zad7();
+    zad7();
     // zad8();
     // zad12();
 }
